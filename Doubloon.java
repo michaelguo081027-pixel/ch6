@@ -1,27 +1,27 @@
 public class Doubloon {
 	public static void main (String[] args) {
-		String word="ABCEDF";
-		System.out.print(toLowerCase(word));
+		String word=""; //try type something else
+		System.out.print(isDoubloon(word));
 	}
 	
 	public static boolean isDoubloon (String str){
-		String test=toLowerCase(str);
-		for (int i=0; i<test.length()-1; i++){
-			return false;
+		String test=str;
+		for (int i=0; i<test.length(); i++){
+			if(number(test, test.charAt(i))%2!=0){
+				return false;
+			}
 		}
 		return true;
 	}
 	
-	public static String toLowerCase (String original){
-		String allLowerCase="";
-		for(int j=0; j<original.length(); j++){
-			if(original.charAt(j)<='Z' && original.charAt(j)>='A'){
-				allLowerCase=allLowerCase+(original.charAt(j)+26);
-			}else{
-				allLowerCase=allLowerCase+original.charAt(j);
+	public static int number (String s, char c){
+		int count=0;
+		for (int j=0; j<s.length(); j++){
+			if(s.charAt(j)==c){
+				count++;
 			}
 		}
-		return allLowerCase;
+		return count;
 	}
 }
 

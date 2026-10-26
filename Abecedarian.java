@@ -1,6 +1,6 @@
 public class Abecedarian {
 	public static void main (String[] args) {
-		String word="";
+		String word=""; //try type something else
 		System.out.print(isAbecedarian(word));
 	}
 	
