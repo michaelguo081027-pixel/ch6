@@ -1,14 +1,16 @@
 public class PPAP {
 	public static void main (String[] args) {
-		ppap("pen", "apple");
-		ppap("pen", "pinapple");
-		ppap("pointer", "null");
-		ppap("scholar", "AP");
+		System.out.println(ppap("I have a pen, I have an apple"));
+		System.out.println(ppap("I have a pen, I have an pineapple"));
+		System.out.println(ppap("I have a pointer, I have a null"));
+		System.out.println(ppap("I have a scholar, I have a AP"));
 	}
 	
-	public static void ppap (String s1, String s2){
+	public static String ppap (String s){
+		String s1=s.substring(9, s.indexOf(","));
+		String s2=s.substring(s.lastIndexOf(" ")+1, s.length());
 		String sn=s2.substring(0, 1).toUpperCase()+s2.substring(1, s2.length());
-		System.out.println("I have a "+s1+", I have a "+sn+".");
-		System.out.println("Uh! "+sn+" "+s1+".");
+		String line="Uh! "+sn+" "+s1;
+		return line;
 	}
 }
